@@ -10,6 +10,38 @@
       style="position: absolute; left: 0px"
       src="http://www.anniemation.com/clip_art/images/cat-walk.gif"
     />
-    <script></script>
+    <script>
+
+     // Referencia al elemento img del gato
+     const cat = document.getElementById("myCat");
+      // Posición inicial y dirección
+      let position = 0;
+      let movingRight = true;
+
+      // Función para mover el gato
+      function catWalk() {
+        const screenWidth = window.innerWidth - cat.width; // Ajuste para mantener el gato en pantalla
+
+        // Verificar si el gato está en el borde derecho
+        if (movingRight) {
+          position += 10;
+          if (position >= screenWidth) {
+            movingRight = false; // Cambiar dirección a la izquierda
+          }
+        } else {
+          position -= 10;
+          if (position <= 0) {
+            movingRight = true; // Cambiar dirección a la derecha
+          }
+        }
+
+        // Actualizar la posición del gato
+        cat.style.left = position + "px";
+      }
+
+      // Llamar a la función catWalk cada 50 ms
+      setInterval(catWalk, 50);
+
+    </script>
   </body>
 </html>
