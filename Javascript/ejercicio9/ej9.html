@@ -12,17 +12,14 @@
     />
     <script>
 
-     // Referencia al elemento img del gato
      const cat = document.getElementById("myCat");
       // Posición inicial y dirección
       let position = 0;
       let movingRight = true;
 
-      // Función para mover el gato
       function catWalk() {
         const screenWidth = window.innerWidth - cat.width; // Ajuste para mantener el gato en pantalla
 
-        // Verificar si el gato está en el borde derecho
         if (movingRight) {
           position += 10;
           if (position >= screenWidth) {
@@ -43,5 +40,7 @@
       setInterval(catWalk, 50);
 
     </script>
+        <a href="../index.html">Back</a>.
+
   </body>
 </html>
